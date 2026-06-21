@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>협동 타워 디펜스 길드 허브</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">TD</div>
+        <div>
+          <p class="eyebrow">협동 타워 디펜스</p>
+          <h1>길드 허브</h1>
+        </div>
+      </div>
+      <nav class="nav-actions" aria-label="주요 링크">
+        <a class="icon-link" href="#guilds" aria-label="길드 목록">목록</a>
+        <a class="primary-link" id="officialCafeLink" href="https://cafe.naver.com/" target="_blank" rel="noreferrer">공식 카페</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="summary-band" aria-label="길드 현황">
+        <div class="summary-grid">
+          <article>
+            <span>활성 대형 길드</span>
+            <strong id="guildCount">0</strong>
+          </article>
+          <article>
+            <span>총 수용 인원</span>
+            <strong id="memberCount">0</strong>
+          </article>
+          <article>
+            <span>가입 정보 공개</span>
+            <strong id="openCount">0</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="toolbar" aria-label="길드 검색 및 필터">
+        <label class="search-box">
+          <span>검색</span>
+          <input id="searchInput" type="search" placeholder="길드명, 가입 조건, 운영진 검색" autocomplete="off" />
+        </label>
+        <div class="segmented" role="group" aria-label="길드 정보 필터">
+          <button class="active" type="button" data-filter="all">전체</button>
+          <button type="button" data-filter="open">정보 공개</button>
+          <button type="button" data-filter="pending">준비중</button>
+        </div>
+      </section>
+
+      <section id="guilds" class="layout">
+        <aside class="guild-list" aria-label="길드 목록">
+          <div id="guildCards" class="guild-cards"></div>
+        </aside>
+
+        <section class="detail-panel" aria-live="polite">
+          <div class="detail-hero">
+            <div>
+              <p id="detailStatus" class="status open">정보 공개</p>
+              <h2 id="detailName">길드명</h2>
+              <p id="detailIntro">길드 소개가 표시됩니다.</p>
+            </div>
+            <a id="detailKakao" class="kakao-button" href="#" target="_blank" rel="noreferrer">카카오 문의</a>
+          </div>
+
+          <div class="detail-grid">
+            <section class="info-block">
+              <h3>가입 조건</h3>
+              <dl id="requirements"></dl>
+            </section>
+            <section class="info-block">
+              <h3>운영 정보</h3>
+              <dl id="guildMeta"></dl>
+            </section>
+          </div>
+
+          <section class="member-section">
+            <div class="section-heading">
+              <h3>길드 명단</h3>
+              <span id="rosterCount"></span>
+            </div>
+            <div id="roster" class="roster"></div>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
